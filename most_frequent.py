@@ -5,18 +5,7 @@
 
 from functools import partial
 from collections import Counter
-
-def add(a, b, c):
-    return a + b + c
-
-add_curried = partial(add, 1)  # fixes a=1
-result = add_curried(2, 3)     # 6
-
 import operator
-
-eq_5 = partial(operator.eq, 5)
-
-
 
 def find_most_frequent(nums: list[int]) -> int:
     counter = Counter(nums)
@@ -30,3 +19,5 @@ assert find_most_frequent(reversed(range(5))) == 0
 assert find_most_frequent(range(10)) == 0
 assert find_most_frequent([0, 0, 1]) == 0
 assert find_most_frequent([0, 0, 1, 1]) == 0
+assert find_most_frequent([0, 1] * 2) == 0
+assert find_most_frequent(([0] * 5) + ([1] * 5)) == 0
