@@ -1,7 +1,9 @@
 # Given a list of strings, use filter to create a new list containing only the strings that start with the letter "a".
 
+
+
 def filter_strs(strs):
-    return list(filter(lambda s: s.startswith("a"), strs))
+    return list(filter(lambda s: s[0] == 'a', strs))
 
 
 # Tests
