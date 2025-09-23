@@ -13,9 +13,13 @@ def find_most_frequent(nums: list[int]) -> int: # n time/space
     return min(most_frequent)
 
 
-assert find_most_frequent(reversed(range(5))) == 0
-assert find_most_frequent(range(10)) == 0
-assert find_most_frequent([0, 0, 1]) == 0
-assert find_most_frequent([0, 0, 1, 1]) == 0
-assert find_most_frequent([0, 1] * 2) == 0
-assert find_most_frequent(([0] * 5) + ([1] * 5)) == 0
+def test_find_most_frequent():
+    assert find_most_frequent(reversed(range(5))) == 0
+    assert find_most_frequent(range(10)) == 0
+    assert find_most_frequent([0, 0, 1]) == 0
+    assert find_most_frequent([0, 0, 1, 1]) == 0
+    assert find_most_frequent([0, 1] * 2) == 0
+    assert find_most_frequent(([0] * 5) + ([1] * 5)) == 0
+
+test_find_most_frequent()
+print("All test cases for find_most_frequent function passed!")
