@@ -6,7 +6,8 @@ def top_n_words(words, n):
     """
     counter = Counter(words)
     most_common = counter.most_common(n)
-    return list(most_common)
+    words = list(filter(lambda x: x[0], most_common))
+    return words
 
 
 # --- TESTS ---
@@ -28,3 +29,5 @@ assert top_n_words([], 2) == [], "Test 4 failed"
 words_with_tie = ['a', 'b', 'c', 'a', 'b', 'c']
 result = top_n_words(words_with_tie, 2)
 assert set(result) <= set(['a', 'b', 'c']) and len(result) == 2, "Test 5 failed"
+
+print('All tests passed')
