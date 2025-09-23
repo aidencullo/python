@@ -16,6 +16,10 @@ assert filter_strs(["cherry", "berry", "date"]) == []
 assert filter_strs(["ant", "anchor", "boat", "aqua"]) == ["ant", "anchor", "aqua"]
 assert filter_strs([]) == []
 
+print("All test cases for filter_strs function passed!")
+
+from functools import partial
+
 # Function to filter numbers divisible by 3
 def filter_divisible_by_three(lst):
     is_divisible_by_three = lambda x: x % 3 == 0
@@ -27,4 +31,4 @@ assert filter_divisible_by_three([2, 4, 5, 7]) == []
 assert filter_divisible_by_three([0, 3, 6, 12]) == [0, 3, 6, 12]
 assert filter_divisible_by_three([]) == []
 
-print("All tests passed!")
+print("All test cases for filter_divisible_by_three function passed!")
