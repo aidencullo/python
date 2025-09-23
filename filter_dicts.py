@@ -9,22 +9,11 @@ def filter_dicts(data: List[Dict[str, any]]) -> List[Dict[str, any]]:
     - 'score' is greater than 10
     """
 
-
-
     def starts_with_a(data):
-        name, score = data["name"], data["score"]
-        key, value = name, score
-        if not key.startswith('a'):
-            return False   
-        return True
+        return data['name'].startswith('a')
 
     def greater_than_ten(data):
-        name, score = data["name"], data["score"]
-        key, value = name, score
-        if value <= 10:
-            return False        
-        return True
-
+        return data['score'] > 10
 
     def starts_with_a_and_greater_than_ten(data):
         return starts_with_a(data) and greater_than_ten(data)
