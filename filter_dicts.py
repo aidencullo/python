@@ -8,8 +8,19 @@ def filter_dicts(data: List[Dict[str, any]]) -> List[Dict[str, any]]:
     - 'name' starts with 'a'
     - 'score' is greater than 10
     """
-    # TODO: implement the filtering logic
-    return []
+    from functools import partial
+    def starts_with_a_and_greater_than_ten(pair):
+        name, score = data["name"], data["score"]
+        key, value = name, score
+        print(key, value)
+        if not key.startswith('a'):
+            return False
+        if value <= 10:
+            return False        
+        return True
+    filtered = list(filter(starts_with_a_and_greater_than_ten, data)
+    )
+    return filtered
 
 # ====== Tests ======
 
