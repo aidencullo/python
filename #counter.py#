@@ -6,6 +6,7 @@ def top_n_words(words, n):
     """
     counter = Counter(words)
     most_common = counter.most_common(n)
+    print(most_common)
     return list(most_common)
 
 
