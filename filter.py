@@ -14,9 +14,9 @@ def test_filter_strs():
     assert filter_strs(["cherry", "berry", "date"]) == []
     assert filter_strs(["ant", "anchor", "boat", "aqua"]) == ["ant", "anchor", "aqua"]
     assert filter_strs([]) == []
+    print("All test cases for filter_strs function passed!")
 
 test_filter_strs()
-print("All test cases for filter_strs function passed!")
 
 from functools import partial
 
@@ -29,6 +29,6 @@ def test_filter_divisible_by_three():
     assert filter_divisible_by_three([2, 4, 5, 7]) == []
     assert filter_divisible_by_three([0, 3, 6, 12]) == [0, 3, 6, 12]
     assert filter_divisible_by_three([]) == []
+    print("All test cases for filter_divisible_by_three function passed!")
 
 test_filter_divisible_by_three()
-print("All test cases for filter_divisible_by_three function passed!")
