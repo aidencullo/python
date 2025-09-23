@@ -6,7 +6,7 @@ def top_n_words(words, n):
     """
     counter = Counter(words)
     most_common = counter.most_common(n)
-    words = list(filter(lambda x: x[0], most_common))
+    words = list(map(lambda x: x[0], most_common))
     return words
 
 
