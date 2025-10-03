@@ -9,3 +9,14 @@ lines = text.split('\n')
 non_empty_lines = list(filter(None, lines))
 num_lines = len(lines)
 print(non_empty_lines)
+
+
+
+
+strings = ['adf  ads', '   dasf   ', 'dddd     ', 's', '     ']
+stripped = list(filter(str.lstrip, strings))
+print(stripped)
+
+from functools import reduce
+result = reduce(print, [1,2])
+print(result)
