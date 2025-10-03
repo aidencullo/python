@@ -4,7 +4,7 @@ empty_set = set()
 
 
 def test_set_properties(A, B):
-        # difference
+    # difference
     A_B = A - B
     B_A = B - A
     assert A.difference(B) == A_B
@@ -56,4 +56,4 @@ def test_set_properties(A, B):
 
     print("all set tests passed!")
 
-test_set_properties()
+test_set_properties(A, B)
