@@ -6,23 +6,29 @@ PLEASE NOTE: We will only be considering hiring within UTC-3 to UTC+3 due to the
 """
 
 non_empty_lines = [line for line in text.splitlines() if line.strip()]
-print(non_empty_lines)
+# print(non_empty_lines)
 
 
 
 
 strings = ['adf  ads', '   dasf   ', 'dddd     ', 's', '     ']
 stripped = list(map(str.rstrip, strings))
-print(stripped)
+# print(stripped)
 
 strings = ['adf  ads', '   dasf   ', 'dddd     ', 's', '     ']
 stripped = list(map(str.lstrip, strings))
-print(stripped)
+# print(stripped)
 
 strings = ['adf  ads', '   dasf   ', 'dddd     ', 's', '     ']
 stripped = list(map(str.lstrip, map(str.rstrip, strings)))
+# print(stripped)
+
+maps = [str.lstrip, str.rstrip]
+data = strings
+from functools import reduce
+stripped = list(reduce(lambda d, m: map(m, d), maps, data))
 print(stripped)
 
 from functools import reduce
-result = reduce(print, [1,2])
-print(result)
+# result = reduce(print, [1,2])
+# print(result)
