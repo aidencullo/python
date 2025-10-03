@@ -76,6 +76,11 @@ def run_test_suite():
         (set(range(5)), set(range(5))),
         (set(), set(range(5))),
         (set(range(5)), set()),
+        ({1, 2, 3}, {3, 4, 5}),
+        (set("hello"), set("world")),
+        ({1, 2}, {1, 2, 3, 4}),
+        ({1, 2, 3, 4}, {1, 2}),
+        (set(), set()),
     ]
 
     for i, (A, B) in enumerate(set_pairs):
