@@ -44,6 +44,11 @@ assert A | B == B
 assert B | B == B
 
 # symmetric diff
+assert A ^ B <= B
+assert A ^ B == B ^ A
+assert A ^ B == (A | B) - (A & B)
+assert (A ^ B) & (A & B) == set()
+
 
 # xor?
 
