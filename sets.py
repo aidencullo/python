@@ -1,14 +1,10 @@
-A = set(range(5))
-B = set(range(10))
-
+empty_set = set()
 
 def test_difference(A, B):
-    empty_set = set()
-    # difference
+
     A_B = A - B
     B_A = B - A
     assert A.difference(B) == A_B
-    assert A_B == empty_set
     assert not A_B
     assert A_B <= B
     assert A_B <= A
@@ -18,7 +14,7 @@ def test_difference(A, B):
 
 
 def test_subset(A, B):
-    # subset
+
     assert A <= B
     assert A <= A
     assert A < B
@@ -32,7 +28,7 @@ def test_subset(A, B):
 
 
 def test_intersection(A, B):
-    # Intersection
+
     assert A & A == A
     assert A & A != B
     assert A & B == B & A
@@ -44,7 +40,7 @@ def test_intersection(A, B):
 
 
 def test_union(A, B):
-    # union
+
     assert A | A == A
     assert A | B >= B
     assert A | B >= A
@@ -55,11 +51,11 @@ def test_union(A, B):
 
 
 def test_symmetric_diff(A, B):
-    # symmetric diff
+
     assert A ^ B <= B
     assert A ^ B == B ^ A
     assert A ^ B == (A | B) - (A & B)
-    assert (A ^ B) & (A & B) == set()
+    assert (A ^ B) & (A & B) == empty_set
     print("symmetric diff tests passed")
 
 
@@ -73,4 +69,23 @@ def test_set_properties(A, B):
     print("all set tests passed!")
 
 
-test_set_properties(A, B)
+def run_test_suite():
+    set_pairs = [
+        (set(range(5)), set(range(10))),
+        (set(range(10)), set(range(5))),
+        (set(range(5)), set(range(5))),
+        (set(), set(range(5))),
+        (set(range(5)), set()),
+    ]
+
+    for i, (A, B) in enumerate(set_pairs):
+        print(f"\n--- Running test case {i+1} ---")
+        test_set_properties(A, B)
+
+
+def main():
+    run_test_suite()
+
+
+if __name__ == "__main__":
+    main()
