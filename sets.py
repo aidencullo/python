@@ -79,7 +79,7 @@ def run_test_suite():
     ]
 
     for i, (A, B) in enumerate(set_pairs):
-        print(f"\n--- Running test case {i+1} ---")
+        print(f"\n--- Running test case {i+1} with A={A} and B={B} ---")
         test_set_properties(A, B)
 
 
