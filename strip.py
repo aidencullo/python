@@ -12,7 +12,15 @@ print(non_empty_lines)
 
 
 strings = ['adf  ads', '   dasf   ', 'dddd     ', 's', '     ']
-stripped = list(filter(str.lstrip, strings))
+stripped = list(map(str.rstrip, strings))
+print(stripped)
+
+strings = ['adf  ads', '   dasf   ', 'dddd     ', 's', '     ']
+stripped = list(map(str.lstrip, strings))
+print(stripped)
+
+strings = ['adf  ads', '   dasf   ', 'dddd     ', 's', '     ']
+stripped = list(map(str.lstrip, map(str.rstrip, strings)))
 print(stripped)
 
 from functools import reduce
