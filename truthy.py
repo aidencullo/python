@@ -31,3 +31,13 @@ filtered_int_attrs = list(filter(bool, int_attrs))
 print(filtered_int_attrs)
 
 
+
+data = [0, 1, '', 'hello', [], [1, 2], None, False, True]
+filtered_data = [item for item in data if item]
+print(filtered_data)
+# Output: [1, 'hello', [1, 2], True]
+
+data = [0, 1, '', 'hello', [], [1, 2], None, False, True]
+filtered_data = list(filter(bool, data))
+print(filtered_data)
+# Output: [1, 'hello', [1, 2], True]
