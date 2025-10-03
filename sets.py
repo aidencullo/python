@@ -16,8 +16,17 @@ assert B_A <= B
 assert not (A <= B_A)
 
 # subset
+assert A <= B
+assert A <= A
+assert A < B
+assert not (A < A)
+assert not (B <= A)
+assert not (B < A)
+assert A.issubset(B)
+assert A.issubset(A)
+assert not B.issubset(A)
 
-# intersection
+# Intersection
 
 # union
 
