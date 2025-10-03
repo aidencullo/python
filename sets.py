@@ -36,6 +36,12 @@ assert A & B <= A | B
 assert A & B == A
 
 # union
+assert A | A == A
+assert A | B >= B
+assert A | B >= A
+assert A | B >= A & B
+assert A | B == B
+assert B | B == B
 
 # symmetric diff
 
