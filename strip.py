@@ -5,9 +5,7 @@ The Wikimedia Foundation is seeking an experienced and mission-driven Engineerin
 PLEASE NOTE: We will only be considering hiring within UTC-3 to UTC+3 due to the geographical location of the team.
 """
 
-lines = text.split('\n')
-non_empty_lines = list(filter(None, lines))
-num_lines = len(lines)
+non_empty_lines = [line for line in text.splitlines() if line.strip()]
 print(non_empty_lines)
 
 
