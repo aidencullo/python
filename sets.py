@@ -27,6 +27,7 @@ def test_subset(A, B):
 
 def test_intersection(A, B):
 
+    sets = (A, B)
     assert A & A == A
     assert A & B == B & A
     assert A & B <= A
@@ -34,10 +35,14 @@ def test_intersection(A, B):
     assert A & B <= A | B
     if A <= B:
         assert A & B == A
+    assert set.intersection(*sets) <= A
+    assert set.intersection(*sets) <= B
     print("intersection tests passed")
 
 
 def test_union(A, B):
+
+    sets = (A, B)
 
     assert A | A == A
     assert A | B >= B
@@ -46,6 +51,8 @@ def test_union(A, B):
     if A <= B:
         assert A | B == B
     assert B | B == B
+    assert set.union(*sets) == A | B
+    assert A <= set.union(*sets)
     print("union tests passed")
 
 
@@ -94,3 +101,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+main()
