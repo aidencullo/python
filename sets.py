@@ -14,7 +14,7 @@ def test_difference(A, B):
 
 
 def test_subset(A, B):
-    
+
     C = A - {1, 2}
     assert A <= A
     assert C <= A

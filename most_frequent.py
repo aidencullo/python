@@ -4,7 +4,8 @@ from functools import partial
 from collections import Counter
 import operator
 
-def find_most_frequent(nums: list[int]) -> int: # n time/space
+
+def find_most_frequent(nums: list[int]) -> int:  # n time/space
     counter = Counter(nums)
     highest_frequency_num = max(counter, key=counter.get)
     highest_frequency = counter[highest_frequency_num]
@@ -20,6 +21,7 @@ def test_find_most_frequent():
     assert find_most_frequent([0, 0, 1, 1]) == 0
     assert find_most_frequent([0, 1] * 2) == 0
     assert find_most_frequent(([0] * 5) + ([1] * 5)) == 0
+
 
 test_find_most_frequent()
 print("All test cases for find_most_frequent function passed!")

@@ -1,14 +1,15 @@
 def is_truthy(value):
-  """
-  Checks if a given value is truthy in Python.
+    """
+    Checks if a given value is truthy in Python.
 
-  Args:
-    value: The value to check.
+    Args:
+      value: The value to check.
 
-  Returns:
-    True if the value is truthy, False otherwise.
-  """
-  return bool(value)
+    Returns:
+      True if the value is truthy, False otherwise.
+    """
+    return bool(value)
+
 
 # Examples of truthy values
 print(f"1 is truthy: {is_truthy(1)}")
@@ -31,13 +32,12 @@ filtered_int_attrs = list(filter(bool, int_attrs))
 print(filtered_int_attrs)
 
 
-
-data = [0, 1, '', 'hello', [], [1, 2], None, False, True]
+data = [0, 1, "", "hello", [], [1, 2], None, False, True]
 filtered_data = [item for item in data if item]
 print(filtered_data)
 # Output: [1, 'hello', [1, 2], True]
 
-data = [0, 1, '', 'hello', [], [1, 2], None, False, True]
+data = [0, 1, "", "hello", [], [1, 2], None, False, True]
 filtered_data = list(filter(bool, data))
 print(filtered_data)
 # Output: [1, 'hello', [1, 2], True]

@@ -2,6 +2,7 @@
 
 from typing import List, Dict
 
+
 def filter_dicts(data: List[Dict[str, any]]) -> List[Dict[str, any]]:
     """
     Filter a list of dictionaries, keeping only those where:
@@ -10,17 +11,17 @@ def filter_dicts(data: List[Dict[str, any]]) -> List[Dict[str, any]]:
     """
 
     def starts_with_a(data):
-        return data['name'].startswith('a')
+        return data["name"].startswith("a")
 
     def greater_than_ten(data):
-        return data['score'] > 10
+        return data["score"] > 10
 
     def starts_with_a_and_greater_than_ten(data):
         return starts_with_a(data) and greater_than_ten(data)
 
-    filtered = list(filter(starts_with_a_and_greater_than_ten, data)
-    )
+    filtered = list(filter(starts_with_a_and_greater_than_ten, data))
     return filtered
+
 
 # ====== Tests ======
 

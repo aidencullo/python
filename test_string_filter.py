@@ -1,5 +1,6 @@
 from string_filter import filter_strs
 
+
 def test_filter_strs():
     assert filter_strs(["aiden", "tanner"]) == ["aiden"]
     assert filter_strs(["apple", "banana", "avocado"]) == ["apple", "avocado"]

@@ -18,6 +18,7 @@ def test(num, nums):
     constant_remove(num, local_nums)
     assert local_nums == expected
 
+
 test(0, [0])
 test(0, list(range(10)))
 test(0, list(range(100)))
