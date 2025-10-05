@@ -22,8 +22,10 @@ def is_sunny(event):
 
 def measure_random_events():
     events = generate_events()
-    rainy_events = len([event for event in events if is_rainy(event)])
-    sunny_events = len([event for event in events if is_sunny(event)])
+    rainy = "It will rain!"
+    sunny = "Sunny day!"
+    rainy_events = events.count(rainy)
+    sunny_events = events.count(sunny)
     print("there were {} rainy events and {} sunny events!".format(rainy_events, sunny_events))
 
 measure_random_events()
