@@ -14,3 +14,11 @@ try:
     User(id="not-an-int", name=123)
 except ValidationError as e:
     print(e)
+
+
+
+from collections import namedtuple
+
+User = namedtuple("User", ["id", "name", "email"])
+u = User(1, "Alice", None)
+print(u.id, u.name)
