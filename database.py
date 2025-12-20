@@ -45,13 +45,15 @@ class Database:
         table = self.tables[table_name]
 
         record_id = record["id"]
-        for row in table:
-            id = row["id"]
-            if id == record_id:
-                for attr in record:
-                    row[attr] = record[attr]
-                return
-        table.append(record)
+        ids = [row["id"] for row in table]
+
+        if record_id in ids:
+            record_idx = ids.index(record_id)
+        else:
+            record_idx = len(table)
+            table.append({})
+        
+        table[record_idx] = record
 
 
     def select(self, table_name, target_column_names):
