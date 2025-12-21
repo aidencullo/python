@@ -38,22 +38,13 @@ from collections import defaultdict
 class Database:
 
     def __init__(self):
-        self.tables = defaultdict(list)
+        self.tables = defaultdict(dict)
     
     def insert(self, table_name, record):
-
         table = self.tables[table_name]
-
-        record_id = record["id"]
-        ids = [row["id"] for row in table]
-
-        if record_id in ids:
-            record_idx = ids.index(record_id)
-        else:
-            record_idx = len(table)
-            table.append({})
-        
-        table[record_idx] = record
+        id = record["id"]
+        table[id] = record
+        print(table)
 
 
     def select(self, table_name, target_column_names):
@@ -63,7 +54,7 @@ class Database:
         table = self.tables[table_name]
         results = []
 
-        for row in table:
+        for row in table.values():
             row_result = {}
             for target_column_name in target_column_names:
                 row_result[target_column_name] = None
@@ -78,7 +69,7 @@ class Database:
 
     def select_where(self, table_name, predicate):
         table = self.tables[table_name]
-        return [row for row in table if predicate(row)]
+        return [row for row in table.values() if predicate(row)]
 
 
 if __name__ == "__main__":
@@ -87,5 +78,5 @@ if __name__ == "__main__":
     
     loader = unittest.TestLoader()
     suite = loader.loadTestsFromTestCase(TestDatabase)
-    runner = unittest.TextTestRunner(verbosity=2)
+    runner = unittest.TextTestRunner(verbosity=2, failfast=True)
     runner.run(suite)

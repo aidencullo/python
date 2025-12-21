@@ -286,5 +286,8 @@ class TestDatabase(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main(verbosity=2)
+    loader = unittest.TestLoader()
+    suite = loader.loadTestsFromTestCase(TestDatabase)
+    runner = unittest.TextTestRunner(verbosity=2, failfast=True)
+    runner.run(suite)
 
