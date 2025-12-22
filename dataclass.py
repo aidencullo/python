@@ -1,9 +1,10 @@
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, field, asdict
+import uuid
 
 @dataclass
 class Recipe:
-    id: str
-    name: str
+    id: str = field(default_factory=lambda: str(uuid.uuid4()))
+    name: str = ""
     ingredients: list[str] = None
     steps: list[str] = None
 
@@ -15,5 +16,5 @@ class Recipe:
         return f"Recipe(id={self.id}, name={self.name})"
 
 
-r = Recipe(1, "daniel")
+r = Recipe(name="daniel")
 print(r)
