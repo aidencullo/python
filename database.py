@@ -44,13 +44,9 @@ class Database:
         table = self.tables[table_name]
         id = record["id"]
         table[id] = record
-        print(table)
 
 
     def select(self, table_name, target_column_names):
-        if table_name not in self.tables:
-            return []   
-
         table = self.tables[table_name]
         results = []
 
