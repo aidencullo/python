@@ -51,14 +51,7 @@ class Database:
         results = []
 
         for row in table.values():
-            row_result = {}
-            for target_column_name in target_column_names:
-                row_result[target_column_name] = None
-
-            for target_column_name in target_column_names:
-                for column_name in row:
-                    if column_name == target_column_name:
-                        row_result[target_column_name] = row[column_name]
+            row_result = {key: row.get(key) for key in target_column_names}
             results.append(row_result)
 
         return results
