@@ -50,11 +50,7 @@ class Database:
         table = self.tables[table_name]
         results = []
 
-        for row in table.values():
-            row_result = {key: row.get(key) for key in target_column_names}
-            results.append(row_result)
-
-        return results
+        return [{key: row.get(key) for key in target_column_names} for row in table.values()]
 
     def select_where(self, table_name, predicate):
         table = self.tables[table_name]
