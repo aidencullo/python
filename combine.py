@@ -12,4 +12,4 @@ def combine(array1, array2):
     Returns:
         List of merged dictionaries
     """
-    pass
+    return [{**d1, **d2} for d1, d2 in zip(array1, array2)]
