@@ -1,5 +1,4 @@
 from functools import reduce
 import operator
 
-r = reduce(operator.add, range(10))
-print(r)
+reduce(lambda acc, x: acc + x, [1, 2, 3], 0)
