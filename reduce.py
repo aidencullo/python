@@ -1,4 +1,6 @@
 from functools import reduce
 import operator
 
-reduce(lambda acc, x: acc + x, [1, 2, 3], 0)
+lst = [range(i) for i in range(10)]
+
+reduce(lambda acc, x: acc + len(x), lst, 0)
